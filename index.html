@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0a1a12">
+    <meta name="description" content="You are invited to the Valima of Adeel Kamal Ahmad and Khadija Imran Butt. November 11, 2026 · Lahore.">
+    <title>VALIMA · Adeel & Khadija</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='14' fill='%231c8a52' font-family='Georgia,serif'%3EAK%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="preload" as="image" type="image/webp" href="assets/hero-arch.webp?v=1">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="curtain-intro">
+
+    <div class="splash" id="splash" role="button" tabindex="0" aria-label="Tap to continue">
+        <div class="splash-inner">
+            <div class="splash-monogram">A<span class="mono-amp">&</span>K</div>
+            <div class="splash-rule"></div>
+            <p class="splash-sub">VALIMA</p>
+            <p class="tap-label">Tap to continue</p>
+        </div>
+    </div>
+
+    <div id="curtain-overlay" class="curtain-overlay" aria-hidden="true"></div>
+
+    <main id="main" class="hidden">
+
+        <section class="hero">
+            <div class="hero-stage">
+                <div class="hero-fallback" aria-hidden="true"></div>
+                <picture>
+                    <source
+                        type="image/webp"
+                        srcset="assets/hero-arch-720.webp?v=1 720w, assets/hero-arch.webp?v=1 720w"
+                        sizes="(max-width: 700px) 100vw, min(100vw, 56vh)">
+                    <img
+                        class="hero-card"
+                        src="assets/hero-arch.jpg?v=1"
+                        srcset="assets/hero-arch-720.jpg?v=1 720w, assets/hero-arch.jpg?v=1 720w"
+                        sizes="(max-width: 700px) 100vw, min(100vw, 56vh)"
+                        width="720"
+                        height="1280"
+                        alt=""
+                        decoding="async"
+                        fetchpriority="high">
+                </picture>
+                <div class="hero-veil" aria-hidden="true"></div>
+                <div class="arabic-blessing" lang="ar" dir="rtl">
+                    <p class="bismillah" title="In the name of Allah, the Most Gracious, the Most Merciful">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                    <span class="arabic-flourish" aria-hidden="true">✦</span>
+                    <p class="ayah" title="And We made you into nations and tribes so that you may know one another">وَجَعَلْنَاكُمْ شُعُوبًا وَقَبَائِلَ لِتَعَارَفُوا</p>
+                </div>
+                <div class="hero-content">
+                    <p class="host-line">Mr &amp; Mrs Javed Butt</p>
+                    <p class="host-action"><em>warmly invite you to the</em></p>
+
+                    <div class="event-title">VALIMA</div>
+                    <p class="of-sister"><em>of their beloved son</em></p>
+
+                    <div class="couple-block">
+                        <h1 class="bride-groom">Adeel Kamal Ahmad</h1>
+                        <div class="golden-amp">&amp;</div>
+                        <h1 class="bride-groom">Khadija Imran Butt</h1>
+                    </div>
+
+                    <p class="of-sister"><em>daughter of Mr &amp; Mrs Imran Shahid Butt</em></p>
+                </div>
+
+                <a class="scroll-hint" href="#reveal-section">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                    <span>Scroll to explore</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section section-scratch section-dark" id="reveal-section">
+            <div class="section-tag">Reveal</div>
+            <h2 class="section-heading">Scratch to discover the date</h2>
+
+            <div class="scratch-row">
+                <div class="scratch-unit">
+                    <div class="scratch-card-wrap">
+                        <div class="scratch-behind">
+                            <span class="sc-value sc-month">Nov</span>
+                        </div>
+                        <canvas class="scratch-canvas" data-idx="0"></canvas>
+                    </div>
+                    <p class="scratch-label">Month</p>
+                </div>
+
+                <div class="scratch-unit">
+                    <div class="scratch-card-wrap">
+                        <div class="scratch-behind">
+                            <span class="sc-value sc-day">11</span>
+                        </div>
+                        <canvas class="scratch-canvas" data-idx="1"></canvas>
+                    </div>
+                    <p class="scratch-label">Day</p>
+                </div>
+
+                <div class="scratch-unit">
+                    <div class="scratch-card-wrap">
+                        <div class="scratch-behind">
+                            <span class="sc-value sc-year">2026</span>
+                        </div>
+                        <canvas class="scratch-canvas" data-idx="2"></canvas>
+                    </div>
+                    <p class="scratch-label">Year</p>
+                </div>
+            </div>
+
+            <div id="scratch-gate">
+                <div class="gate-pips">
+                    <span class="pip" id="pip-0"></span>
+                    <span class="pip" id="pip-1"></span>
+                    <span class="pip" id="pip-2"></span>
+                </div>
+                <p class="gate-hint">Scratch all three cards to continue</p>
+                <div class="gate-lock" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                        <rect x="3" y="11" width="18" height="11" rx="2"/>
+                        <path d="M7 11V7a5 5 0 0110 0v4"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="scratch-scroll-hint hidden" id="scratch-scroll-hint">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                <span>Scroll to continue</span>
+            </div>
+        </section>
+
+        <div id="gated-content">
+
+            <section class="section section-black" data-reveal>
+                <div class="section-tag">Countdown</div>
+                <div class="countdown-grid">
+                    <div class="cd-unit"><span id="cd-days">--</span><label>Days</label></div>
+                    <div class="cd-unit"><span id="cd-hours">--</span><label>Hours</label></div>
+                    <div class="cd-unit"><span id="cd-min">--</span><label>Min</label></div>
+                    <div class="cd-unit"><span id="cd-sec">--</span><label>Sec</label></div>
+                </div>
+                <p class="cd-sub">until the Valima</p>
+            </section>
+
+            <section class="section venue-section section-dark" data-reveal>
+                <p class="venue-pre">Join us for an evening of joy at</p>
+                <div class="venue-ornament" aria-hidden="true">
+                    <svg viewBox="0 0 240 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="35" x2="85" y2="35" stroke="#d4af37" stroke-width="0.7" opacity="0.4"/>
+                        <line x1="155" y1="35" x2="240" y2="35" stroke="#d4af37" stroke-width="0.7" opacity="0.4"/>
+                        <circle cx="120" cy="35" r="14" stroke="#d4af37" stroke-width="0.8" fill="none" opacity="0.55"/>
+                        <circle cx="120" cy="35" r="7" stroke="#d4af37" stroke-width="0.6" fill="none" opacity="0.4"/>
+                        <circle cx="120" cy="35" r="2" fill="#d4af37" opacity="0.5"/>
+                        <path d="M95 35 L105 22 L115 35 L105 48Z" stroke="#d4af37" stroke-width="0.6" fill="none" opacity="0.3"/>
+                        <path d="M125 35 L135 22 L145 35 L135 48Z" stroke="#d4af37" stroke-width="0.6" fill="none" opacity="0.3"/>
+                        <circle cx="60" cy="35" r="3" stroke="#d4af37" stroke-width="0.8" fill="none" opacity="0.35"/>
+                        <circle cx="180" cy="35" r="3" stroke="#d4af37" stroke-width="0.8" fill="none" opacity="0.35"/>
+                    </svg>
+                </div>
+                <h2 class="venue-name">Encore by Zafar Group</h2>
+                <p class="venue-city">Lahore, Pakistan</p>
+                <p class="venue-date-line">November 11, 2026 &nbsp;•&nbsp; 7:00 PM</p>
+                <p class="venue-reception">Grand Dinner &amp; Reception</p>
+            </section>
+
+            <section class="section section-black" data-reveal>
+                <div class="section-tag">Evening</div>
+                <h2 class="section-heading">The Night's Events</h2>
+
+                <div class="program-list">
+                    <div class="prog-item">
+                        <h3>Doors Open &nbsp;·&nbsp; <span class="prog-time">7:00 PM</span></h3>
+                        <p>Guests are received and welcomed by the family</p>
+                        <p>Starters, sherbet &amp; light refreshments served</p>
+                    </div>
+                    <div class="prog-rule"></div>
+                    <div class="prog-item">
+                        <h3>Arrival of the Couple &nbsp;·&nbsp; <span class="prog-time">8:00 PM</span></h3>
+                        <p>The newlyweds make their entrance</p>
+                        <p>Welcomed with love, lights &amp; celebration</p>
+                    </div>
+                    <div class="prog-rule"></div>
+                    <div class="prog-item">
+                        <h3>Grand Dinner</h3>
+                        <p>A lavish spread of traditional Pakistani cuisine</p>
+                        <p>Desserts, mithai &amp; everything in between</p>
+                    </div>
+                    <div class="prog-rule"></div>
+                    <div class="prog-item">
+                        <h3>An Evening of Celebration</h3>
+                        <p>Music, joy and blessings as two families become one</p>
+                        <p>A night of love, prayers &amp; new beginnings</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-dark" data-reveal>
+                <div class="section-tag">Attire</div>
+                <h2 class="section-heading">Dress Code</h2>
+                <p class="dresscode-body">Dress in your finest — this is a night worth celebrating in full splendour.<br>Rich colours, traditional cuts, and formal attire are all welcome.</p>
+                <div class="dresscode-pills">
+                    <div class="dresscode-pill">Formal &amp; Traditional</div>
+                </div>
+            </section>
+
+            <section class="section rsvp-section section-black" data-reveal>
+                <div class="section-tag">RSVP</div>
+                <p class="rsvp-pre">Your seat at the table means the world to us</p>
+                <h2 class="section-heading">Will you join us?</h2>
+
+                <form id="rsvp-form" novalidate>
+                    <div class="field">
+                        <input type="text" name="name" id="f-name" placeholder=" " required autocomplete="name">
+                        <label for="f-name">Full Name <span class="req">*</span></label>
+                    </div>
+                    <div class="field">
+                        <input type="email" name="email" id="f-email" placeholder=" " required autocomplete="email">
+                        <label for="f-email">Email <span class="req">*</span></label>
+                    </div>
+                    <div class="radio-group">
+                        <p class="radio-label">Will you attend? <span class="req">*</span></p>
+                        <label class="radio-opt">
+                            <input type="radio" name="attend" value="yes" required>
+                            <span class="radio-box"></span>
+                            Yes, I'll be there
+                        </label>
+                        <label class="radio-opt">
+                            <input type="radio" name="attend" value="no">
+                            <span class="radio-box"></span>
+                            No, I can't make it
+                        </label>
+                    </div>
+                    <div class="field select-field party-size-field" id="party-size-field">
+                        <select name="partySize" id="f-party">
+                            <option value="" disabled selected></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <label for="f-party">Party Size <span class="req">*</span></label>
+                    </div>
+                    <div class="field">
+                        <textarea name="message" id="f-msg" rows="4" placeholder=" "></textarea>
+                        <label for="f-msg">Message for the family (optional)</label>
+                    </div>
+                    <button type="submit" class="btn-confirm">
+                        <span class="btn-text">Confirm</span>
+                    </button>
+                </form>
+
+                <div class="rsvp-thanks hidden" id="rsvp-thanks">
+                    <p class="thanks-icon" id="thanks-icon">✦</p>
+                    <p id="thanks-line1">We can't wait to celebrate with you.</p>
+                    <p id="thanks-line2">See you on the night.</p>
+                </div>
+            </section>
+
+            <footer class="section-thankyou" data-reveal>
+                <div class="ty-ornament" aria-hidden="true">✦</div>
+                <h2 class="ty-heading">Thank You</h2>
+                <p>For being part of this chapter in our life.</p>
+                <p>Your love and prayers mean everything to us.</p>
+            </footer>
+
+        </div>
+
+    </main>
+
+    <script type="module" src="script.js"></script>
+    <script>
+        if (location.protocol === 'file:') {
+            document.addEventListener('DOMContentLoaded', function () {
+                var label = document.querySelector('.tap-label');
+                if (label) {
+                    label.style.animation = 'none';
+                    label.style.letterSpacing = '0.08em';
+                    label.textContent = 'Open via a local server';
+                }
+                var inner = document.querySelector('.splash-inner');
+                if (!inner) return;
+                var help = document.createElement('p');
+                help.className = 'tap-label';
+                help.style.animation = 'none';
+                help.style.maxWidth = '22rem';
+                help.style.lineHeight = '1.6';
+                help.style.letterSpacing = '0.02em';
+                help.style.textTransform = 'none';
+                help.style.whiteSpace = 'pre-wrap';
+                help.textContent = 'cd ~/Documents/repos/valima-invite\\npython3 -m http.server 8765\\nthen open http://127.0.0.1:8765/';
+                inner.appendChild(help);
+            });
+        }
+    </script>
+</body>
+</html>
