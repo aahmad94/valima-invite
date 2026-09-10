@@ -1,8 +1,8 @@
 /* ============================================================
-   splash.js — Splash screen & AK zoom-to-fill transition
+   splash.js — Splash screen & hero curtain animation
    ============================================================ */
 
-const ZOOM_MS = 1550;
+import { openCurtains } from './curtains3d.js';
 
 export function initSplash(onDismiss) {
     const splash = document.getElementById('splash');
@@ -10,65 +10,44 @@ export function initSplash(onDismiss) {
 
     let dismissed = false;
 
-    function revealPage() {
-        splash?.classList.add('dismissed');
-        document.body.classList.remove('splash-intro');
-        document.body.classList.add('hero-revealed');
-        onDismiss();
-    }
-
     function dismiss() {
         if (dismissed) return;
         dismissed = true;
 
-        main?.classList.remove('hidden');
+        const el = document.getElementById('splash');
+        const page = document.getElementById('main');
+        el?.classList.add('dismissed');
+        page?.classList.remove('hidden');
 
-        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const hold = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ? 0
+            : 60;
+        setTimeout(() => { openCurtains(); }, hold);
 
-        if (reduced) {
-            revealPage();
-            return;
-        }
-
-        splash?.classList.add('zooming');
-
-        let finished = false;
-        const finish = () => {
-            if (finished) return;
-            finished = true;
-            revealPage();
-        };
-
-        const mono = splash?.querySelector('.splash-monogram');
-        mono?.addEventListener('transitionend', (e) => {
-            if (e.propertyName === 'transform') finish();
-        });
-
-        setTimeout(finish, ZOOM_MS + 180);
+        onDismiss();
     }
 
     document.addEventListener('click', (e) => {
         const el = document.getElementById('splash');
-        if (!el || el.classList.contains('dismissed') || el.classList.contains('zooming')) return;
+        if (!el || el.classList.contains('dismissed')) return;
         if (el.contains(e.target)) dismiss();
     });
     document.addEventListener('touchstart', (e) => {
         const el = document.getElementById('splash');
-        if (!el || el.classList.contains('dismissed') || el.classList.contains('zooming')) return;
+        if (!el || el.classList.contains('dismissed')) return;
         if (el.contains(e.target)) dismiss();
     }, { passive: true });
     document.addEventListener('keydown', (e) => {
         if (e.key !== 'Enter' && e.key !== ' ') return;
         const el = document.getElementById('splash');
-        if (!el || el.classList.contains('dismissed') || el.classList.contains('zooming')) return;
-        e.preventDefault();
+        if (!el || el.classList.contains('dismissed')) return;
         dismiss();
     });
 
     splash?.addEventListener('click', dismiss);
     splash?.addEventListener('touchstart', dismiss, { passive: true });
 
-    if (new URLSearchParams(location.search).has('zoom')) {
+    if (new URLSearchParams(location.search).has('curtain')) {
         dismiss();
     }
 }

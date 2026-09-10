@@ -2,7 +2,7 @@
    countdown.js — Live countdown to the Valima
    ============================================================ */
 
-const TARGET = new Date('2026-11-10T19:00:00');
+const TARGET = new Date('2026-11-11T19:00:00');
 
 function pad(n) {
     return String(n).padStart(2, '0');
