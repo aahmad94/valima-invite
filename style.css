@@ -10,17 +10,18 @@
     --gold-dim:   rgba(212,175,55,0.18);
 
     /* Deep green — splash monogram, panels, backgrounds */
-    --ak:         #1c8a52;
-    --ak-light:   #3cb574;
-    --green:      #1c8a52;
+    --ak:         #146b40;
+    --ak-light:   #2d8f55;
+    --green:      #146b40;
     --green-deep: #0a5c38;
-    --green-dim:  rgba(28,138,82,0.22);
+    --green-dim:  rgba(20,107,64,0.22);
 
-    /* Neutrals */
+    /* Neutrals — panel greens sampled from the hero damask */
     --ink:        #0a0a0a;
     --deep:       #0e0e0e;
-    --panel:      #0a2d1a;
-    --panel2:     #040e08;
+    --panel:      #1f352c;
+    --panel-deep: #172a23;
+    --panel2:     #14241e;
     --text:       #e8e8e8;
     --muted:      #888;
     --ff-serif:   'Playfair Display', 'Cormorant Garamond', Georgia, serif;
@@ -32,11 +33,11 @@
 /* ── Reset ───────────────────────────────────────────── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; background: #0a1a12; }
+html { scroll-behavior: smooth; background: var(--panel); }
 
 body {
     font-family: var(--ff-sans);
-    background: #0a1a12;
+    background: var(--panel);
     color: var(--text);
     line-height: 1.7;
     overflow-x: hidden;
@@ -83,13 +84,13 @@ body.curtain-intro {
     color: var(--ak);
     letter-spacing: -0.02em;
     line-height: 1;
-    animation: breatheGreen 4.8s ease-in-out infinite;
+    animation: breatheGreen 2.4s ease-in-out infinite;
 }
 .mono-amp {
     font-style: italic;
     color: var(--ak-light);
     font-size: 0.75em;
-    animation: breatheGreenAmp 4.8s ease-in-out infinite;
+    animation: breatheGreenAmp 2.4s ease-in-out infinite;
 }
 
 .splash-rule {
@@ -457,7 +458,7 @@ body.curtains-open .scroll-hint { opacity: 1; }
 }
 .section.section-black {
     max-width: 100%;
-    background: #0a0a0a;
+    background: var(--ink);
     padding-inline: clamp(24px, 8vw, 100px);
 }
 .section.section-muted {
@@ -1059,12 +1060,12 @@ form {
 
 /* ── ANIMATIONS ──────────────────────────────────────── */
 @keyframes breatheGreen {
-    0%, 100% { color: #157a48; }
-    50%      { color: #3cb574; }
+    0%, 100% { color: #105c36; }
+    50%      { color: #1a7548; }
 }
 @keyframes breatheGreenAmp {
-    0%, 100% { color: #2d9a62; }
-    50%      { color: #5cc98a; }
+    0%, 100% { color: #1a7344; }
+    50%      { color: #248a52; }
 }
 @keyframes blink {
     0%, 100% { opacity: 0.4; }

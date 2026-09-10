@@ -5,7 +5,7 @@
 import { startDots, stopDots } from './dots.js';
 
 // Paste a Valima-specific Apps Script Web App URL here (do not reuse the Barat sheet)
-const APPS_SCRIPT_URL = '';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4-TVWHBYVZHnYUWll6B7N6LcPerFlY-pDirBlOP6cbslNghRX-QQiVqA3yqaG93dMBA/exec';
 // Must match the SECRET value in your Apps Script
 const SUBMIT_SECRET   = 'valima2026';
 const SUBMIT_TIMEOUT_MS = 8000;
