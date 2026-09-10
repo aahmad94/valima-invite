@@ -1,8 +1,6 @@
 /* ============================================================
-   splash.js — Splash screen & hero curtain animation
+   splash.js — Splash screen fade to the invitation card
    ============================================================ */
-
-import { openCurtains } from './curtains3d.js';
 
 export function initSplash(onDismiss) {
     const splash = document.getElementById('splash');
@@ -14,16 +12,20 @@ export function initSplash(onDismiss) {
         if (dismissed) return;
         dismissed = true;
 
-        const el = document.getElementById('splash');
-        const page = document.getElementById('main');
-        el?.classList.add('dismissed');
-        page?.classList.remove('hidden');
+        main?.classList.remove('hidden');
+        document.body.classList.add('hero-revealed');
+        document.body.classList.remove('splash-intro');
 
-        const hold = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-            ? 0
-            : 60;
-        setTimeout(() => { openCurtains(); }, hold);
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduced) {
+            splash?.classList.add('dismissed');
+            onDismiss();
+            return;
+        }
 
+        requestAnimationFrame(() => {
+            splash?.classList.add('dismissed');
+        });
         onDismiss();
     }
 
@@ -47,7 +49,7 @@ export function initSplash(onDismiss) {
     splash?.addEventListener('click', dismiss);
     splash?.addEventListener('touchstart', dismiss, { passive: true });
 
-    if (new URLSearchParams(location.search).has('curtain')) {
+    if (new URLSearchParams(location.search).has('fade')) {
         dismiss();
     }
 }
