@@ -431,162 +431,24 @@ body.hero-revealed .scroll-hint { opacity: 1; }
     line-height: 1.2;
 }
 
-/* ── SCRATCH SECTION (full-height gating) ────────────── */
-.section-scratch {
+/* ── COUNTDOWN ───────────────────────────────────────── */
+.section-countdown {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-block: clamp(60px, 10vw, 100px);
-    position: relative;
 }
 
-/* ── THREE SCRATCH CARDS ─────────────────────────────── */
-.scratch-row {
-    display: flex;
-    gap: clamp(12px, 3vw, 24px);
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    margin-bottom: 52px;
-}
-
-.scratch-unit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-}
-
-.scratch-card-wrap {
-    width: clamp(100px, 22vw, 155px);
-    height: clamp(120px, 28vw, 185px);
-    position: relative;
-    border: 2px solid var(--gold);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 0 6px var(--gold-dim), 0 16px 40px rgba(212,175,55,0.2);
-    background: #0a2a18;
-}
-
-.scratch-behind {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(135deg, #0a2a18, #10321c);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sc-value {
+.cd-date {
     font-family: var(--ff-serif);
+    font-size: clamp(1.25rem, 3.4vw, 1.85rem);
     color: var(--gold);
-    text-align: center;
-    line-height: 1;
-}
-.sc-month { font-size: clamp(1.6rem, 5vw, 2.4rem); letter-spacing: 2px; }
-.sc-day   { font-size: clamp(2.4rem, 7vw, 3.8rem); font-weight: 600; }
-.sc-year  { font-size: clamp(1.3rem, 3.8vw, 1.9rem); letter-spacing: 4px; color: var(--gold-light); }
-
-.scratch-canvas {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    cursor: crosshair;
-    touch-action: none;
-    transition: opacity 0.9s ease;
+    letter-spacing: 0.12em;
+    margin: 8px 0 36px;
 }
 
-.scratch-label {
-    font-size: 0.68rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-/* ── SCRATCH GATE (pips + lock) ──────────────────────── */
-#scratch-gate {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    transition: opacity 0.9s ease;
-}
-
-.gate-pips {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-}
-
-.pip {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(212,175,55,0.45);
-    background: transparent;
-    transition: background 0.45s ease, border-color 0.45s ease, transform 0.35s ease;
-}
-.pip.done {
-    background: var(--gold);
-    border-color: var(--gold);
-    transform: scale(1.2);
-}
-
-.gate-hint {
-    font-size: 0.72rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.gate-lock {
-    color: rgba(212,175,55,0.35);
-    margin-top: 4px;
-    animation: bob 2.6s ease-in-out infinite;
-}
-
-/* ── SCRATCH SCROLL HINT ─────────────────────────────── */
-.scratch-scroll-hint {
-    position: absolute;
-    bottom: clamp(28px, 5vw, 48px);
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    color: var(--gold);
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-}
-.scratch-scroll-hint svg { opacity: 0.8; }
-.scratch-scroll-hint.visible {
-    opacity: 0.8;
-    animation: bob 2.6s ease-in-out infinite;
-}
-
-/* ── GATED CONTENT ───────────────────────────────────── */
-#gated-content {
-    display: none;
-    opacity: 0;
-    transition: opacity 1.1s ease;
-}
-#gated-content.unlocked {
-    display: block;
-}
-#gated-content.fade-in {
-    opacity: 1;
-}
-
-/* ── COUNTDOWN ───────────────────────────────────────── */
 .countdown-grid {
     display: flex;
     justify-content: center;
@@ -1017,7 +879,6 @@ form {
 
 @media (max-width: 400px) {
     .event-title { letter-spacing: 7px; }
-    .scratch-row { gap: 8px; }
     .countdown-grid { gap: 14px; }
     .cd-unit span { font-size: 2.4rem; }
     .program-list { padding: 0 4px; }

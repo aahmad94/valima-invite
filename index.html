@@ -7,7 +7,7 @@
     <meta name="description" content="You are invited to the Valima of Adeel Kamal Ahmad and Khadija Imran Butt. November 11, 2026 · Lahore.">
     <title>VALIMA · Adeel & Khadija</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='14' fill='%23146b40' font-family='Georgia,serif'%3EAK%3C/text%3E%3C/svg%3E">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=7">
     <link rel="preload" as="image" type="image/webp" href="assets/hero-arch.webp?v=1">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
@@ -65,82 +65,24 @@
                     <p class="of-sister"><em>daughter of Mr &amp; Mrs Imran Shahid Butt</em></p>
                 </div>
 
-                <a class="scroll-hint" href="#reveal-section">
+                <a class="scroll-hint" href="#countdown-section">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
                     <span>Scroll to explore</span>
                 </a>
             </div>
         </section>
 
-        <section class="section section-scratch section-dark" id="reveal-section">
-            <div class="section-tag">Reveal</div>
-            <h2 class="section-heading">Scratch to discover the date</h2>
-
-            <div class="scratch-row">
-                <div class="scratch-unit">
-                    <div class="scratch-card-wrap">
-                        <div class="scratch-behind">
-                            <span class="sc-value sc-month">Nov</span>
-                        </div>
-                        <canvas class="scratch-canvas" data-idx="0"></canvas>
-                    </div>
-                    <p class="scratch-label">Month</p>
-                </div>
-
-                <div class="scratch-unit">
-                    <div class="scratch-card-wrap">
-                        <div class="scratch-behind">
-                            <span class="sc-value sc-day">11</span>
-                        </div>
-                        <canvas class="scratch-canvas" data-idx="1"></canvas>
-                    </div>
-                    <p class="scratch-label">Day</p>
-                </div>
-
-                <div class="scratch-unit">
-                    <div class="scratch-card-wrap">
-                        <div class="scratch-behind">
-                            <span class="sc-value sc-year">2026</span>
-                        </div>
-                        <canvas class="scratch-canvas" data-idx="2"></canvas>
-                    </div>
-                    <p class="scratch-label">Year</p>
-                </div>
+        <section class="section section-countdown section-black" id="countdown-section">
+            <div class="section-tag">Countdown</div>
+            <p class="cd-date">November 11, 2026</p>
+            <div class="countdown-grid">
+                <div class="cd-unit"><span id="cd-days">--</span><label>Days</label></div>
+                <div class="cd-unit"><span id="cd-hours">--</span><label>Hours</label></div>
+                <div class="cd-unit"><span id="cd-min">--</span><label>Min</label></div>
+                <div class="cd-unit"><span id="cd-sec">--</span><label>Sec</label></div>
             </div>
-
-            <div id="scratch-gate">
-                <div class="gate-pips">
-                    <span class="pip" id="pip-0"></span>
-                    <span class="pip" id="pip-1"></span>
-                    <span class="pip" id="pip-2"></span>
-                </div>
-                <p class="gate-hint">Scratch all three cards to continue</p>
-                <div class="gate-lock" aria-hidden="true">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                        <rect x="3" y="11" width="18" height="11" rx="2"/>
-                        <path d="M7 11V7a5 5 0 0110 0v4"/>
-                    </svg>
-                </div>
-            </div>
-
-            <div class="scratch-scroll-hint hidden" id="scratch-scroll-hint">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-                <span>Scroll to continue</span>
-            </div>
+            <p class="cd-sub">until the Valima</p>
         </section>
-
-        <div id="gated-content">
-
-            <section class="section section-black" data-reveal>
-                <div class="section-tag">Countdown</div>
-                <div class="countdown-grid">
-                    <div class="cd-unit"><span id="cd-days">--</span><label>Days</label></div>
-                    <div class="cd-unit"><span id="cd-hours">--</span><label>Hours</label></div>
-                    <div class="cd-unit"><span id="cd-min">--</span><label>Min</label></div>
-                    <div class="cd-unit"><span id="cd-sec">--</span><label>Sec</label></div>
-                </div>
-                <p class="cd-sub">until the Valima</p>
-            </section>
 
             <section class="section venue-section section-dark" data-reveal>
                 <p class="venue-pre">Join us for an evening of joy at</p>
@@ -270,8 +212,6 @@
                 <p>For being part of this chapter in our life.</p>
                 <p>Your love and prayers mean everything to us.</p>
             </footer>
-
-        </div>
 
     </main>
 
