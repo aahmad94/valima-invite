@@ -1,6 +1,5 @@
 /* ============================================================
    scroll-reveal.js — IntersectionObserver fade-in on scroll
-   Called after gated content is unlocked by scratch.js
    ============================================================ */
 
 export function initScrollReveal() {
