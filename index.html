@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#1f352c">
+    <meta name="theme-color" content="#072328">
     <meta name="description" content="You are invited to the Valima of Adeel Kamal Ahmad and Khadija Imran Butt. November 11, 2026 · Lahore.">
     <title>VALIMA · Adeel & Khadija</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='14' fill='%23146b40' font-family='Georgia,serif'%3EAK%3C/text%3E%3C/svg%3E">
-    <link rel="stylesheet" href="style.css?v=9">
-    <link rel="preload" as="image" type="image/webp" href="assets/main-card.webp?v=2">
+    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="preload" as="image" type="image/webp" href="assets/main-card-mobile.webp?v=3" media="(max-width: 700px) and (orientation: portrait)">
+    <link rel="preload" as="image" type="image/webp" href="assets/main-card.webp?v=3" media="(min-width: 701px), (orientation: landscape)">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body class="splash-intro">
@@ -29,14 +30,22 @@
             <div class="hero-stage">
                 <picture>
                     <source
+                        media="(max-width: 700px) and (orientation: portrait)"
                         type="image/webp"
-                        srcset="assets/main-card-720.webp?v=2 720w, assets/main-card.webp?v=2 1429w"
-                        sizes="(max-width: 700px) 92vw, min(92vw, 72vh)">
+                        srcset="assets/main-card-mobile.webp?v=3">
+                    <source
+                        media="(max-width: 700px) and (orientation: portrait)"
+                        type="image/jpeg"
+                        srcset="assets/main-card-mobile.jpg?v=3">
+                    <source
+                        type="image/webp"
+                        srcset="assets/main-card-720.webp?v=3 720w, assets/main-card.webp?v=3 1429w"
+                        sizes="(max-width: 700px) 100vw, min(94vw, calc((100dvh - 72px) * 1429 / 2000))">
                     <img
                         class="hero-card"
-                        src="assets/main-card.jpg?v=2"
-                        srcset="assets/main-card-720.jpg?v=2 720w, assets/main-card.jpg?v=2 1429w"
-                        sizes="(max-width: 700px) 92vw, min(92vw, 72vh)"
+                        src="assets/main-card.jpg?v=3"
+                        srcset="assets/main-card-720.jpg?v=3 720w, assets/main-card.jpg?v=3 1429w"
+                        sizes="(max-width: 700px) 100vw, min(94vw, calc((100dvh - 72px) * 1429 / 2000))"
                         width="1429"
                         height="2000"
                         alt="Invitation to the Valima of Adeel Ahmad and Khadija Imran Butt on November 11, 2026 at Encore by Zafar Group, Lahore."
