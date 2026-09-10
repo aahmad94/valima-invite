@@ -84,13 +84,13 @@ body.curtain-intro {
     color: var(--ak);
     letter-spacing: -0.02em;
     line-height: 1;
-    animation: breatheGreen 4.8s ease-in-out infinite;
+    animation: breatheGreen 2.4s ease-in-out infinite;
 }
 .mono-amp {
     font-style: italic;
     color: var(--ak-light);
     font-size: 0.75em;
-    animation: breatheGreenAmp 4.8s ease-in-out infinite;
+    animation: breatheGreenAmp 2.4s ease-in-out infinite;
 }
 
 .splash-rule {
@@ -458,7 +458,7 @@ body.curtains-open .scroll-hint { opacity: 1; }
 }
 .section.section-black {
     max-width: 100%;
-    background: var(--panel-deep);
+    background: var(--ink);
     padding-inline: clamp(24px, 8vw, 100px);
 }
 .section.section-muted {
@@ -1061,11 +1061,11 @@ form {
 /* ── ANIMATIONS ──────────────────────────────────────── */
 @keyframes breatheGreen {
     0%, 100% { color: #105c36; }
-    50%      { color: #2a8a52; }
+    50%      { color: #1a7548; }
 }
 @keyframes breatheGreenAmp {
     0%, 100% { color: #1a7344; }
-    50%      { color: #3ca05e; }
+    50%      { color: #248a52; }
 }
 @keyframes blink {
     0%, 100% { opacity: 0.4; }
