@@ -44,7 +44,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-body.curtain-intro {
+body.splash-intro {
     overflow: hidden;
     height: 100dvh;
 }
@@ -62,7 +62,7 @@ body.curtain-intro {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: opacity 0.5s var(--ease-soft), visibility 0.5s;
+    transition: opacity 0.9s var(--ease-soft), visibility 0.9s;
 }
 .splash.dismissed {
     opacity: 0;
@@ -117,77 +117,8 @@ body.curtain-intro {
     animation: blink 2.2s ease-in-out infinite;
 }
 
-/* ── CURTAIN OVERLAY ─────────────────────────────────── */
-.curtain-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 80;
-    background: #000;
-    pointer-events: auto;
-    overflow: hidden;
-    perspective: 1400px;
-    perspective-origin: 50% 42%;
-}
-.curtain-canvas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-.curtain-overlay.is-opening { pointer-events: none; }
-.curtain-overlay.is-gone {
-    opacity: 0;
-    transition: opacity 0.55s ease;
-    pointer-events: none;
-}
-
-/* CSS 3D fallback — multi-panel velvet folds */
-.css-curtain {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 51%;
-    display: flex;
-    transform-style: preserve-3d;
-    will-change: transform;
-    transition: transform 3.4s cubic-bezier(0.72, 0, 0.14, 1);
-}
-.css-curtain.left  { left: 0;  transform-origin: left center; }
-.css-curtain.right { right: 0; transform-origin: right center; flex-direction: row-reverse; }
-
-.css-panel {
-    flex: 1 1 0;
-    height: 100%;
-    transform: rotateY(var(--fold));
-    transform-origin: center center;
-    background:
-        linear-gradient(180deg, rgba(0,0,0,0.35) 0%, transparent 12%, transparent 88%, rgba(0,0,0,0.45) 100%),
-        linear-gradient(90deg,
-            #000000 0%,
-            #0a0a0a 22%,
-            #121212 38%,
-            #000000 50%,
-            #0c0c0c 64%,
-            #000000 100%);
-    box-shadow:
-        inset 4px 0 12px rgba(0,0,0,0.35),
-        inset -4px 0 12px rgba(0,0,0,0.25);
-}
-.css-curtain.left  .css-panel:last-child,
-.css-curtain.right .css-panel:first-child {
-    box-shadow: inset 0 0 0 1px rgba(212,175,55,0.35);
-}
-
-.curtain-overlay.is-open .css-curtain.left {
-    transform: translate3d(-6%, 0, 0) scaleX(0.06);
-}
-.curtain-overlay.is-open .css-curtain.right {
-    transform: translate3d(6%, 0, 0) scaleX(0.06);
-}
-
 @media (prefers-reduced-motion: reduce) {
-    .curtain-overlay { display: none; }
+    .splash { transition: none; }
     .splash-monogram,
     .mono-amp { animation: none; }
 }
@@ -213,7 +144,7 @@ body.curtain-intro {
     background-size: 300px;
     background-position: center;
     filter: brightness(0.72);
-    transition: filter 2.6s 0.05s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: filter 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero::before {
     content: '';
@@ -223,7 +154,7 @@ body.curtain-intro {
         radial-gradient(ellipse at 50% 50%, rgba(13, 46, 28, 0.2) 0%, rgba(8, 32, 18, 0.42) 100%);
     pointer-events: none;
 }
-body.curtains-open .hero { filter: brightness(1); }
+body.hero-revealed .hero { filter: brightness(1); }
 
 /* Contained 9:16 invitation card — arch stays intact on every viewport */
 .hero-stage {
@@ -330,8 +261,8 @@ body.curtains-open .hero { filter: brightness(1); }
         color: transparent;
         -webkit-text-fill-color: transparent;
     }
-    body.curtains-open .bismillah,
-    body.curtains-open .ayah {
+    body.hero-revealed .bismillah,
+    body.hero-revealed .ayah {
         animation: gold-sweep 3.6s linear infinite;
     }
 }
@@ -438,10 +369,10 @@ body.curtains-open .hero { filter: brightness(1); }
     text-transform: uppercase;
     opacity: 0;
     animation: bob 2.6s ease-in-out infinite;
-    transition: opacity 1.0s 2.5s ease;
+    transition: opacity 0.8s 0.55s ease;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9), 0 2px 12px rgba(0, 0, 0, 0.75);
 }
-body.curtains-open .scroll-hint { opacity: 1; }
+body.hero-revealed .scroll-hint { opacity: 1; }
 .scroll-hint svg { opacity: 1; color: #fff; }
 
 /* ── SECTION SHELL ───────────────────────────────────── */
@@ -1109,6 +1040,6 @@ form {
 }
 
 @supports not (height: 100dvh) {
-    body.curtain-intro { height: 100vh; }
+    body.splash-intro { height: 100vh; }
     .hero { height: 100vh; }
 }

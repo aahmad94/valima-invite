@@ -4,7 +4,6 @@
    ============================================================ */
 
 import { initSplash } from './js/splash.js';
-import { prepareCurtains } from './js/curtains3d.js';
 import {
     setupScratchListeners,
     initScratchCanvases,
@@ -17,7 +16,6 @@ function boot() {
     if (window.__inviteBooted) return;
     window.__inviteBooted = true;
 
-    prepareCurtains();
     setupScratchListeners();
     initRSVP();
 
