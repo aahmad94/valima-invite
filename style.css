@@ -51,6 +51,17 @@ body.splash-intro {
 
 /* ── Utility ─────────────────────────────────────────── */
 .hidden { display: none !important; }
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 
 /* ── SPLASH SCREEN ───────────────────────────────────── */
 .splash {
@@ -156,204 +167,31 @@ body.splash-intro {
 }
 body.hero-revealed .hero { filter: brightness(1); }
 
-/* Contained 9:16 invitation card — arch stays intact on every viewport */
+/* Contained invitation card — native 1429×2000 art, damask shows around it */
 .hero-stage {
     position: relative;
     z-index: 1;
-    aspect-ratio: 9 / 16;
-    width: min(100%, calc(100dvh * 9 / 16));
+    aspect-ratio: 1429 / 2000;
+    width: min(92%, calc((100dvh - 88px) * 1429 / 2000));
     height: auto;
-    max-height: 100%;
+    max-height: calc(100% - 88px);
     margin-inline: auto;
     flex-shrink: 0;
-    container-type: size;
     overflow: hidden;
     box-shadow:
         0 0 0 1px rgba(212, 175, 55, 0.22),
         0 28px 80px rgba(0, 0, 0, 0.55);
 }
 
-.hero-fallback {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse 68% 58% at 50% 40%, #2a6a4a 0%, #163a22 48%, #0a1a10 100%);
-}
-
 .hero-card {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
     display: block;
-}
-
-.hero-veil {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background:
-        linear-gradient(
-            180deg,
-            transparent 8%,
-            rgba(4, 20, 12, 0.12) 38%,
-            transparent 72%
-        );
-}
-
-.arabic-blessing {
-    position: absolute;
-    top: 20cqh;
-    left: 14cqi;
-    right: 14cqi;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.15em;
-    pointer-events: none;
-    text-align: center;
-}
-.bismillah,
-.ayah {
-    font-family: 'Amiri', 'Noto Naskh Arabic', serif;
-    font-weight: 700;
-    line-height: 1.45;
-    color: var(--gold);
-}
-.bismillah {
-    font-size: clamp(1.26rem, 7.5cqw, 2.25rem);
-    letter-spacing: 0.02em;
-    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.45));
-}
-.ayah {
-    font-size: clamp(0.76rem, 4.2cqw, 1.16rem);
-    opacity: 0.95;
-    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.35));
-}
-.arabic-flourish {
-    color: var(--gold);
-    font-size: 0.55rem;
-    opacity: 0.7;
-    line-height: 1;
-}
-
-@supports ((-webkit-background-clip: text) or (background-clip: text)) {
-    .bismillah,
-    .ayah {
-        background-image: linear-gradient(
-            90deg,
-            #9a7420 0%,
-            #9a7420 38%,
-            #d4af37 46%,
-            #fff4c4 50%,
-            #d4af37 54%,
-            #9a7420 62%,
-            #9a7420 100%
-        );
-        background-size: 280% 100%;
-        background-position: 0% 50%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        -webkit-text-fill-color: transparent;
-    }
-    body.hero-revealed .bismillah,
-    body.hero-revealed .ayah {
-        animation: gold-sweep 3.6s linear infinite;
-    }
-}
-
-@keyframes gold-sweep {
-    from { background-position: 0% 50%; }
-    to   { background-position: 100% 50%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .bismillah,
-    .ayah {
-        animation: none !important;
-        color: var(--gold);
-        -webkit-text-fill-color: var(--gold);
-        background: none;
-        filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.4));
-    }
-}
-
-.hero-content {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    max-width: none;
-    padding: 64% 14% 36%;
-    padding: 38cqh 12cqi 18cqh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 2px;
-    text-shadow: 0 2px 14px rgba(4, 16, 10, 0.45);
-}
-
-.host-line {
-    font-family: var(--ff-serif);
-    font-size: clamp(0.78rem, 3.8cqw, 1.05rem);
-    color: #f3e6d8;
-    letter-spacing: 0.04em;
-    line-height: 1.25;
-}
-.host-action {
-    font-size: clamp(0.7rem, 3.1cqw, 0.92rem);
-    color: #e4d0c2;
-    margin-top: 0;
-    line-height: 1.3;
-}
-
-.event-title {
-    font-family: var(--ff-serif);
-    font-size: clamp(1.7rem, 11cqw, 3.2rem);
-    color: var(--gold);
-    letter-spacing: 0.18em;
-    line-height: 1;
-    margin: 8px 0 4px;
-}
-
-.of-sister {
-    font-size: clamp(0.68rem, 2.9cqw, 0.88rem);
-    color: #e4d0c2;
-    line-height: 1.3;
-}
-
-.couple-block {
-    margin-top: 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-}
-.bride-groom {
-    font-family: 'Cormorant Garamond', var(--ff-serif);
-    font-size: clamp(1.15rem, 6.6cqw, 1.95rem);
-    color: #faf6f0;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    line-height: 1.2;
-}
-.golden-amp {
-    font-family: var(--ff-serif);
-    font-size: clamp(0.95rem, 4.6cqw, 1.45rem);
-    color: var(--gold);
-    font-style: italic;
-    line-height: 1;
-    margin: 1px 0 2px;
+    width: 100%;
+    height: auto;
 }
 
 .scroll-hint {
     position: absolute;
-    bottom: 7.2%;
+    bottom: 18px;
     left: 0;
     right: 0;
     z-index: 2;
@@ -878,7 +716,6 @@ form {
 }
 
 @media (max-width: 400px) {
-    .event-title { letter-spacing: 7px; }
     .countdown-grid { gap: 14px; }
     .cd-unit span { font-size: 2.4rem; }
     .program-list { padding: 0 4px; }
@@ -887,17 +724,10 @@ form {
 
 @media (orientation: landscape) and (max-height: 520px) {
     .hero-stage {
-        width: min(100%, calc(100dvh * 9 / 16));
-        max-height: 100%;
+        width: min(92%, calc((100dvh - 64px) * 1429 / 2000));
+        max-height: calc(100% - 64px);
     }
-    .hero-card { object-fit: cover; object-position: center; }
-    .hero-content { padding: 10% 12% 18%; }
-    .arabic-blessing { top: 8%; left: 16%; right: 16%; }
-    .bismillah { font-size: clamp(1rem, 5.2vh, 1.5rem); }
-    .ayah { font-size: clamp(0.74rem, 3.4vh, 1rem); }
-    .hero .event-title { font-size: clamp(1.4rem, 7vh, 2.4rem); }
-    .hero .bride-groom { font-size: clamp(1rem, 5vh, 1.6rem); }
-    .scroll-hint { bottom: 3%; }
+    .scroll-hint { bottom: 8px; }
 }
 
 @supports not (height: 100dvh) {
