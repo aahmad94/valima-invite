@@ -5,7 +5,6 @@
 
 import { initSplash } from './js/splash.js';
 import { initScrollReveal } from './js/scroll-reveal.js';
-import { startCountdown } from './js/countdown.js';
 import { initRSVP } from './js/rsvp.js';
 
 function boot() {
@@ -15,7 +14,6 @@ function boot() {
     initRSVP();
 
     initSplash(() => {
-        startCountdown();
         initScrollReveal();
     });
 }
