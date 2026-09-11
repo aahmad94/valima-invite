@@ -167,12 +167,12 @@ body.splash-intro {
 }
 body.hero-revealed .hero { filter: brightness(1); }
 
-/* Contained invitation card — native 1429×2000 art, damask shows around it */
+/* Contained invitation card — SVG art 360×504, damask shows around it */
 .hero-stage {
     position: relative;
     z-index: 1;
-    aspect-ratio: 1429 / 2000;
-    width: min(94%, calc((100dvh - 72px) * 1429 / 2000));
+    aspect-ratio: 360 / 504;
+    width: min(94%, calc((100dvh - 72px) * 360 / 504));
     height: auto;
     max-height: calc(100dvh - 72px);
     margin-inline: auto;
@@ -204,7 +204,7 @@ body.hero-revealed .hero { filter: brightness(1); }
     }
     .hero::before { display: none; }
     .hero-stage {
-        aspect-ratio: 1429 / 2000;
+        aspect-ratio: 360 / 504;
         width: 100%;
         height: auto;
         max-height: none;
@@ -212,16 +212,9 @@ body.hero-revealed .hero { filter: brightness(1); }
         box-shadow: none;
         overflow: hidden;
     }
-    .hero-stage picture {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
     .hero-card {
         width: 100%;
         height: auto;
-        object-fit: unset;
-        object-position: unset;
     }
 }
 
@@ -569,7 +562,7 @@ form {
 
 @media (orientation: landscape) and (max-height: 520px) {
     .hero-stage {
-        width: min(94%, calc((100dvh - 56px) * 1429 / 2000));
+        width: min(94%, calc((100dvh - 56px) * 360 / 504));
         max-height: calc(100dvh - 56px);
     }
 }
