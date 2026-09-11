@@ -189,14 +189,14 @@ body.hero-revealed .hero { filter: brightness(1); }
     height: auto;
 }
 
-/* Mobile portrait — full-bleed card, almost no damask */
+/* Mobile portrait — hero is exactly the card: top corners at the
+   browser edge, bottom corners flush with the RSVP section */
 @media (max-width: 700px) and (orientation: portrait) {
     .hero {
         width: 100%;
-        height: 100svh;
-        height: 100dvh;
-        max-height: 100dvh;
-        min-height: 100svh;
+        height: auto;
+        min-height: 0;
+        max-height: none;
         padding: 0;
         background-color: #072328;
         background-image: none;
@@ -204,9 +204,9 @@ body.hero-revealed .hero { filter: brightness(1); }
     }
     .hero::before { display: none; }
     .hero-stage {
-        aspect-ratio: auto;
+        aspect-ratio: 1429 / 2000;
         width: 100%;
-        height: 100%;
+        height: auto;
         max-height: none;
         margin: 0;
         box-shadow: none;
@@ -215,13 +215,13 @@ body.hero-revealed .hero { filter: brightness(1); }
     .hero-stage picture {
         display: block;
         width: 100%;
-        height: 100%;
+        height: auto;
     }
     .hero-card {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+        height: auto;
+        object-fit: unset;
+        object-position: unset;
     }
 }
 
