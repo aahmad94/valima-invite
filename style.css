@@ -4,24 +4,26 @@
 
 /* ── Tokens ─────────────────────────────────────────── */
 :root {
-    /* Gold — text accents & highlights */
-    --gold:       #d4af37;
-    --gold-light: #e8cc6a;
-    --gold-dim:   rgba(212,175,55,0.18);
+    /* Champagne gold — sampled from the SVG card lettering (#fdf2ce) */
+    --gold:       #fdf2ce;
+    --gold-light: #fff8e4;
+    --gold-dim:   rgba(253, 242, 206, 0.18);
 
-    /* Deep green — splash monogram, panels, backgrounds */
-    --ak:         #146b40;
-    --ak-light:   #2d8f55;
-    --green:      #146b40;
-    --green-deep: #0a5c38;
-    --green-dim:  rgba(20,107,64,0.22);
+    /* Teal — sampled from the card field, used for accents & splash */
+    --ak:         #2aa0ab;
+    --ak-light:   #3fbec8;
+    --green:      #1a7d86;
+    --green-deep: #0e5058;
+    --green-dim:  rgba(42, 160, 171, 0.22);
 
-    /* Neutrals — panel greens sampled from the hero damask */
-    --ink:        #0a0a0a;
-    --deep:       #0e0e0e;
-    --panel:      #1f352c;
-    --panel-deep: #172a23;
-    --panel2:     #14241e;
+    /* Neutrals — dark teal panels, not forest green */
+    --ink:        #061416;
+    --deep:       #08191c;
+    --panel:      #0d2f35;
+    --panel-deep: #0a252b;
+    --panel2:     #0c2a30;
+    --field:      #071e22;
+    --field-border: #1a555c;
     --text:       #e8e8e8;
     --muted:      #888;
     --ff-serif:   'Playfair Display', 'Cormorant Garamond', Georgia, serif;
@@ -146,7 +148,7 @@ body.splash-intro {
     position: relative;
     overflow: hidden;
     padding: 10px 16px 12px;
-    background-color: #0d2e1c;
+    background-color: #0a2d33;
     background-image: url('assets/damask.jpg');
     background-image: image-set(
         url('assets/damask.webp') type('image/webp'),
@@ -162,7 +164,7 @@ body.splash-intro {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at 50% 50%, rgba(13, 46, 28, 0.2) 0%, rgba(8, 32, 18, 0.42) 100%);
+        radial-gradient(ellipse at 50% 50%, rgba(10, 45, 51, 0.2) 0%, rgba(6, 28, 32, 0.42) 100%);
     pointer-events: none;
 }
 body.hero-revealed .hero { filter: brightness(1); }
@@ -179,7 +181,7 @@ body.hero-revealed .hero { filter: brightness(1); }
     flex-shrink: 0;
     overflow: hidden;
     box-shadow:
-        0 0 0 1px rgba(212, 175, 55, 0.22),
+        0 0 0 1px rgba(253, 242, 206, 0.22),
         0 28px 80px rgba(0, 0, 0, 0.55);
 }
 
@@ -198,7 +200,7 @@ body.hero-revealed .hero { filter: brightness(1); }
         min-height: 0;
         max-height: none;
         padding: 0;
-        background-color: #072328;
+        background-color: #003e45;
         background-image: none;
         overflow: hidden;
     }
@@ -270,7 +272,7 @@ body.hero-revealed .hero { filter: brightness(1); }
     font-size: clamp(1.8rem, 4.5vw, 2.8rem);
     color: var(--gold);
     font-weight: 400;
-    margin-bottom: 48px;
+    margin-bottom: 28px;
     line-height: 1.2;
 }
 
@@ -290,7 +292,7 @@ body.hero-revealed .hero { filter: brightness(1); }
 }
 
 form {
-    max-width: 520px;
+    max-width: 400px;
     margin: 0 auto;
     text-align: left;
 }
@@ -298,18 +300,18 @@ form {
 /* Floating-label fields */
 .field {
     position: relative;
-    margin-bottom: 22px;
+    margin-bottom: 14px;
 }
 .field input,
 .field textarea {
     width: 100%;
-    padding: 26px 16px 8px;
-    background: #051a10;
-    border: 1px solid #164028;
-    border-radius: 6px;
+    padding: 18px 12px 6px;
+    background: var(--field);
+    border: 1px solid var(--field-border);
+    border-radius: 5px;
     color: var(--text);
     font-family: var(--ff-sans);
-    font-size: 1rem;
+    font-size: 0.88rem;
     outline: none;
     transition: border-color 0.3s;
     resize: vertical;
@@ -321,7 +323,7 @@ form {
 .field input:-webkit-autofill,
 .field input:-webkit-autofill:hover,
 .field input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px #051a10 inset;
+    -webkit-box-shadow: 0 0 0px 1000px var(--field) inset;
     -webkit-text-fill-color: var(--text);
     border-color: var(--gold);
     transition: background-color 5000s ease-in-out 0s;
@@ -329,25 +331,25 @@ form {
 
 .field label {
     position: absolute;
-    left: 16px;
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     color: var(--muted);
     pointer-events: none;
     transition: 0.25s var(--ease-soft);
-    background: #051a10;
+    background: var(--field);
     padding: 0 4px;
 }
-.field textarea + label { top: 22px; transform: none; }
+.field textarea + label { top: 16px; transform: none; }
 
 .field input:focus + label,
 .field input:not(:placeholder-shown) + label,
 .field textarea:focus + label,
 .field textarea:not(:placeholder-shown) + label {
-    top: 8px;
+    top: 5px;
     transform: translateY(0);
-    font-size: 0.72rem;
+    font-size: 0.65rem;
     color: var(--gold);
 }
 
@@ -356,13 +358,13 @@ form {
 /* Select field (party size) */
 .select-field select {
     width: 100%;
-    padding: 26px 40px 8px 16px;
-    background: #051a10;
-    border: 1px solid #164028;
-    border-radius: 6px;
+    padding: 18px 36px 6px 12px;
+    background: var(--field);
+    border: 1px solid var(--field-border);
+    border-radius: 5px;
     color: var(--text);
     font-family: var(--ff-sans);
-    font-size: 1rem;
+    font-size: 0.88rem;
     outline: none;
     transition: border-color 0.3s;
     appearance: none;
@@ -375,7 +377,7 @@ form {
 .select-field::after {
     content: '';
     position: absolute;
-    right: 16px;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
     width: 0;
@@ -393,9 +395,9 @@ form {
 .select-field select + label { top: 50%; transform: translateY(-50%); }
 .select-field select:focus + label,
 .select-field select:valid + label {
-    top: 8px;
+    top: 5px;
     transform: translateY(0);
-    font-size: 0.72rem;
+    font-size: 0.65rem;
     color: var(--gold);
 }
 
@@ -410,14 +412,14 @@ form {
                 margin-bottom 0.35s var(--ease-soft);
 }
 .party-size-field.visible {
-    max-height: 90px;
-    margin-bottom: 22px;
+    max-height: 72px;
+    margin-bottom: 14px;
     opacity: 1;
 }
 
 /* Radio group */
 .radio-group {
-    margin-bottom: 22px;
+    margin-bottom: 14px;
 }
 .radio-label {
     font-size: 0.85rem;
@@ -431,14 +433,14 @@ form {
 .radio-opt {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    background: #051a10;
-    border: 1px solid #164028;
-    border-radius: 6px;
-    margin-bottom: 8px;
+    gap: 10px;
+    padding: 8px 12px;
+    background: var(--field);
+    border: 1px solid var(--field-border);
+    border-radius: 5px;
+    margin-bottom: 6px;
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text);
     transition: border-color 0.25s, background 0.25s;
 }
@@ -473,24 +475,24 @@ form {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 18px;
+    padding: 12px;
     background: var(--gold);
     color: var(--ink);
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     font-family: var(--ff-sans);
-    font-size: 1rem;
+    font-size: 0.88rem;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     cursor: pointer;
     transition: background 0.25s, transform 0.2s;
-    margin-top: 8px;
+    margin-top: 4px;
 }
 .btn-confirm:hover { background: var(--gold-light); transform: translateY(-2px); }
 
 .rsvp-thanks {
-    max-width: 520px;
+    max-width: 400px;
     margin: 0 auto;
     text-align: center;
     color: var(--gold);
@@ -505,7 +507,7 @@ form {
     text-align: center;
     padding: clamp(100px, 16vw, 160px) 24px;
     background:
-        linear-gradient(rgba(2,8,5,0.78), rgba(4,14,10,0.84)),
+        linear-gradient(rgba(4, 16, 18, 0.78), rgba(6, 20, 22, 0.84)),
         url('HAK08808.JPG') center / cover no-repeat;
     opacity: 0;
     transform: translateY(40px);
@@ -541,12 +543,12 @@ form {
 
 /* ── ANIMATIONS ──────────────────────────────────────── */
 @keyframes breatheGreen {
-    0%, 100% { color: #105c36; }
-    50%      { color: #1a7548; }
+    0%, 100% { color: #1a7d86; }
+    50%      { color: #2aa0ab; }
 }
 @keyframes breatheGreenAmp {
-    0%, 100% { color: #1a7344; }
-    50%      { color: #248a52; }
+    0%, 100% { color: #2aa0ab; }
+    50%      { color: #4ec4ce; }
 }
 @keyframes blink {
     0%, 100% { opacity: 0.4; }
