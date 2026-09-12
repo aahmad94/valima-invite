@@ -281,6 +281,7 @@ body.hero-revealed .hero { filter: brightness(1); }
     border-radius: 0;
     max-width: 100%;
     padding-top: 20px;
+    padding-bottom: clamp(52px, 8vw, 80px);
 }
 
 .rsvp-pre {
