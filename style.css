@@ -507,6 +507,7 @@ form {
 .section-thankyou {
     text-align: center;
     padding: clamp(100px, 16vw, 160px) 24px;
+    font-family: var(--ff-serif);
     background:
         linear-gradient(rgba(4, 16, 18, 0.78), rgba(6, 20, 22, 0.84)),
         url('HAK08808.JPG') center / cover no-repeat;
