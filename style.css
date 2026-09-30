@@ -134,6 +134,7 @@ body.splash-intro {
     .splash { transition: none; }
     .splash-monogram,
     .mono-amp { animation: none; }
+    .hero::after { transition: none; }
 }
 
 /* ── HERO ────────────────────────────────────────────── */
@@ -156,8 +157,6 @@ body.splash-intro {
     );
     background-size: 300px;
     background-position: center;
-    filter: brightness(0.72);
-    transition: filter 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero::before {
     content: '';
@@ -167,9 +166,19 @@ body.splash-intro {
         radial-gradient(ellipse at 50% 50%, rgba(10, 45, 51, 0.2) 0%, rgba(6, 28, 32, 0.42) 100%);
     pointer-events: none;
 }
-body.hero-revealed .hero { filter: brightness(1); }
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: #000;
+    opacity: 0.28;
+    pointer-events: none;
+    transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+body.hero-revealed .hero::after { opacity: 0; }
 
-/* Contained invitation card — SVG art 360×504, damask shows around it */
+/* Contained invitation card — 360×504 art, damask shows around it */
 .hero-stage {
     position: relative;
     z-index: 1;

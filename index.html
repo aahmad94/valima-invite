@@ -35,8 +35,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png?v=6">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=6">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=6">
-    <link rel="stylesheet" href="style.css?v=14">
-    <link rel="preload" as="image" type="image/svg+xml" href="assets/main-card.svg?v=11">
+    <link rel="stylesheet" href="style.css?v=15">
+    <link rel="preload" as="image" type="image/webp" href="assets/main-card.webp?v=12">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body class="splash-intro">
@@ -59,14 +59,17 @@
         <section class="hero">
             <h1 class="sr-only">Valima of Adeel Ahmad and Khadija Imran Butt</h1>
             <div class="hero-stage">
-                <img
-                    class="hero-card"
-                    src="assets/main-card.svg?v=11"
-                    width="360"
-                    height="504"
-                    alt="Invitation to the Valima of Adeel Ahmad and Khadija Imran Butt on November 11, 2026 at Encore by Zafar Group, Lahore."
-                    decoding="async"
-                    fetchpriority="high">
+                <picture>
+                    <source type="image/webp" srcset="assets/main-card.webp?v=12">
+                    <img
+                        class="hero-card"
+                        src="assets/main-card.jpg?v=12"
+                        width="360"
+                        height="504"
+                        alt="Invitation to the Valima of Adeel Ahmad and Khadija Imran Butt on November 11, 2026 at Encore by Zafar Group, Lahore."
+                        decoding="async"
+                        fetchpriority="high">
+                </picture>
             </div>
         </section>
 
